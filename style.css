@@ -1,0 +1,300 @@
+body {
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.25rem;
+}
+
+.h3 {
+  margin: 0 5% 0 0;
+  font-weight: bolder;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  background-color: #f5eef8;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 120px;
+  font-family: 'Raleway', sans-serif;
+  background-color: #d7bde2;
+}
+
+.header .header--logo {
+  margin: 3% 0 0 5%;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.9rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.header .header--logo a {
+  color: #6600cc;
+  text-decoration: none;
+}
+
+.header .header--logo a:hover {
+  text-decoration: underline;
+}
+
+.header .navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 60%;
+  margin: 3% 5% 0 0;
+  padding: 0;
+}
+
+.header .navbar--list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 60%;
+}
+
+.header .navbar--item {
+  list-style-type: none;
+}
+
+.header .navbar--link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 150%;
+  height: 200%;
+  border-radius: 20px;
+  text-decoration: none;
+  color: #000000;
+}
+
+.header .navbar--link:hover {
+  color: white;
+  background-color: #6600cc;
+  text-decoration: none;
+}
+
+.main {
+  padding: 5%;
+  line-height: 1.5rem;
+  text-align: justify;
+}
+
+.main_info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.main_info--photo {
+  max-width: 260px;
+}
+
+.main_info .address {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: 15%;
+}
+
+.main_info .address--name {
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.main_info .contacts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  height: 100%;
+  font-size: 1.4rem;
+}
+
+.main_info .contacts--link {
+  color: black;
+  text-decoration: none;
+}
+
+.main_info .contacts--link:hover {
+  text-decoration: underline;
+  color: #6600cc;
+}
+
+.education {
+  line-height: 2rem;
+}
+
+.education .education--header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin: 2.5% 0 0;
+  padding: 2.5% 0;
+  font-size: 2rem;
+  border: dashed 2px  #6600cc;
+  color: black;
+}
+
+.education .education--header:hover {
+  color: #9933ff;
+}
+
+.education .education--body {
+  display: none;
+  border: dashed 2px  #6600cc;
+  color: black;
+}
+
+.education .education--info {
+  padding: 0 0 2% 5%;
+  background-color: rgba(230, 204, 255, 0.4);
+  border-bottom: dashed 1px black;
+}
+
+.education .education--info:hover {
+  background-color: rgba(102, 0, 204, 0.2);
+}
+
+.education .education--place {
+  padding-top: 2%;
+}
+
+.education .body--active {
+  display: block;
+}
+
+.education .header--active {
+  color: #9933ff;
+  background-color: rgba(102, 0, 204, 0.4);
+}
+
+.education .fa-sort-down {
+  position: relative;
+  top: -5px;
+}
+
+.education .fa-sort-up {
+  position: relative;
+  top: 5px;
+}
+
+.projects .slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 500px;
+  height: 500px;
+  border: solid 1px black;
+  background: blue;
+  overflow: hidden;
+}
+
+.projects .slider--content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 400px;
+  width: 1000px;
+  background-color: white;
+  -webkit-transition: -webkit-transform 700ms linear;
+  transition: -webkit-transform 700ms linear;
+  transition: transform 700ms linear;
+  transition: transform 700ms linear, -webkit-transform 700ms linear;
+}
+
+.projects .button_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 500px;
+  height: 100px;
+}
+
+.projects .button_container--button {
+  margin-right: 10px;
+}
+
+.projects .slide {
+  width: 500px;
+  height: 400px;
+}
+
+.projects .slide-1 {
+  background-color: blueviolet;
+}
+
+.projects .slide-2 {
+  background-color: brown;
+}
+
+.projects .first_position {
+  -webkit-transform: translate3d(0px, 0px, 0px);
+          transform: translate3d(0px, 0px, 0px);
+}
+
+.projects .second_position {
+  -webkit-transform: translate3d(-500px, 0px, 0px);
+          transform: translate3d(-500px, 0px, 0px);
+}
+/*# sourceMappingURL=style.css.map */
