@@ -10,7 +10,8 @@
   <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700,900&display=swap" rel="stylesheet">
   <link href="./assets/fonts/fontawesome-free-5.11.2-web/fontawesome-free-5.11.2-web/css/all.css" rel="stylesheet">
   <link href="./style.css" rel="stylesheet">
-  <script src="./index.js"></script>
+  <link rel="stylesheet" type="text/css" href="./slick/slick/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="./slick/slick/slick/slick-theme.css"/>
 </head>
 <body>
   <div class="wrapper">
@@ -33,7 +34,7 @@
       <main class="main">
 
         <section class="main_info">
-          <img class="main_info--photo" src="./assets/ZhdanovichKatsiaryna.jpg" alt="katsiaryna zhdanovich">
+          <img class="main_info--photo" src="./assets/images/ZhdanovichKatsiaryna.jpg" alt="katsiaryna zhdanovich">
           <section class="address">
               <h1 class="address--name">Katsiaryna Zhdanovich</h1>
               <address class="contacts">
@@ -47,10 +48,10 @@
 
         <section class="education" id="education">
           <section class="education--header" id="education--header">
-            <h3 class="h3">Education:</h3>
+            <h2 class="education--h2">Education:</h2>
             <i class="fas fa-sort-down education--header-img"  id="education--header-img"></i>
           </section>
-          <div class="education--body" id="education--body">
+          <section class="education--body" id="education--body">
             <div class="education--list" id="education--list">
               <div class="education--info">
                 <p class="education--place">Gymnasium №1</p>
@@ -73,24 +74,78 @@
                 <p class="education--year">2019</p>
               </div>
             </div>
-          </div>
+          </section>
         </section>
 
         <section id="projects" class="projects">
-          <div id="slider" class="slider">
-            <div id="content" class="slider--content first_position">
-                <div class="slide slide-1"></div>
-                <div class="slide slide-2"></div>
+
+            <div id="slider" class="slider">
+              <div class="slide">
+                <a href="./theyalow.html"><img src="./assets/images/slider-image-1.jpg" alt=""></a>
+                <div class="slide_desc">
+                  <h2 class="slide_desc--h2">Theyalow</h2>
+
+                  <div class="desc_show" id="desc_show-1">
+                    <div class="desc_show--btn" id="desc_show--btn-1"><p>Show description</p></div>
+                    <i class="fas fa-sort-down desc_show-img" id="desc_show-img-1"></i>
+                  </div>
+
+                  <div class="slide_desc-mobile" id="slide_desc-mobile-1">
+                    <ul class="slide_desc--list-mobile">
+                      <li>Html</li>
+                      <li>CSS</li>
+                      <li>Flex</li>
+                      <li>PixelPerfect</li>
+                    </ul>
+                  </div>
+                  <ul class="slide_desc--list">
+                    <li>Html</li>
+                    <li>CSS</li>
+                    <li>Flex</li>
+                    <li>PixelPerfect</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="slide">
+                  <a href="./repair.html"><img src="./assets/images/slider-image-2.jpg" alt=""></a>
+                  <div class="slide_desc">
+                    <h2 class="slide_desc--h2">Repair design project</h2>
+                    <div class="desc_show" id="desc_show-2">
+                      <div class="desc_show--btn" id="desc_show--btn-2"><p>Show description</p></div>
+                      <i class="fas fa-sort-down desc_show-img" id="desc_show-img-2"></i>
+                    </div>
+                    <div class="slide_desc-mobile" id="slide_desc-mobile-2">
+                      <ul class="slide_desc--list-mobile">
+                          <li>Html</li>
+                          <li>CSS, SCSS</li>
+                          <li>Flex</li>
+                          <li>Grid</li>
+                          <li>PixelPerfect</li>
+                          <li>Figma</li>
+                      </ul>
+                    </div>
+                    <ul class="slide_desc--list">
+                      <li>Html</li>
+                      <li>CSS, SCSS</li>
+                      <li>Flex</li>
+                      <li>Grid</li>
+                      <li>PixelPerfect</li>
+                      <li>Figma</li>
+                    </ul>
+                </div>
+              </div>
             </div>
-            <div id="button_container" class="button_container">
-                <button id="button-1" class="button_container--button">1</button>
-                <button id="button-2" class="button_container--button">2</button>
-            </div>
-          </div>
+
         </section>
+        <!-- projects -->
 
       </main>
     </div>
     <!-- wrapper -->
+    <script type="text/javascript" src="./script/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="./slick/slick/slick/slick.min.js"></script>
+    <script src="./script/index.js"></script>
+
   </body>
 </html>
