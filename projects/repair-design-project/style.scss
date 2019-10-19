@@ -1,0 +1,1654 @@
+@import "scss/font";
+@import "scss/variables";
+@import "scss/mixin";
+@import "scss/placeholder";
+
+body {
+
+    background-color: $primary-color;
+}
+.wrapper {
+    max-width: 1440px;
+    height: 100%;
+    margin: 0 auto;
+    @media screen and (max-width: 1050px) {
+        width: 100%;
+    }
+}
+
+.header {
+    @include header_footer();
+
+
+    @media screen and (max-width: $mobile) {
+        width: 90%;
+        padding: 0 5%;
+    }
+}
+
+
+.banner {
+    @extend %background;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 94%;
+    margin-left: $padding-general;
+    margin-right: 0;
+    padding: 15% 0 20%;
+    background-image: url('./assets/images/background-banner.jpg');
+
+    @media screen and (max-width: $tablet) {
+        width: 100%;
+        margin-left: 0;
+    }
+    @media screen and (max-width: $mobile) {
+        padding: 15% 0 7%;
+        background-size: 100% 100%;
+    }
+    
+    h2 {
+        width: 45%;
+        margin-left: 7%;
+        margin-top: 0;
+        margin-bottom: 0;
+        @include font_YesevaOne();
+        font-family: "Yeseva One", serif;
+        font-weight: 700;
+        
+        span {
+            color: $emphasis-color;
+        }
+        @media screen and (max-width: $mobile) {
+            font-size: 1.4rem;
+            width: 85%;
+            line-height: 132%;
+        }
+    }
+
+    & > p {
+        width: 35%;
+        margin-left: 7%;
+        margin-bottom: 2%;
+        letter-spacing: 1px;
+        @include font_book($font-size: 1.37rem, $line-height: 2.2rem, $transform: none)
+        
+        @media screen and (max-width: $mobile) {
+            font-size: 1.1rem;
+            width: 85%;
+            line-height: 135%;
+        }
+    }
+
+    .banner--button_group {
+        display: flex;
+        flex-direction: row;
+        @media screen and (max-width: $mobile) {
+            flex-direction: column;
+            justify-content: space-around;
+        }
+    }
+
+    .banner--button {
+        @include font_futura_demi();
+        @include button($padding: 1.5rem 2rem);
+        width: 19%;
+        &:first-child {
+            margin-left: 7%;
+            @media screen and (max-width: $mobile) {
+                margin: 7% 0 7% 5%;
+            }
+        }
+        @media screen and (max-width: $tablet) {
+            width: 40%;
+            // padding: 0.5rem 2rem;
+        }
+        @media screen and (max-width: $mobile) {
+            width: 90%;
+            padding: 0.5rem 2rem;
+        }
+    }
+
+    .banner--button-transparent {
+        margin-left: 1%;
+        background-color: transparent; 
+        border: solid 1px $secondary-color;
+        @media screen and (max-width: $mobile) {
+            margin: 0 0 7% 5%;
+        }
+    }
+
+    .banner--scroll_down {
+        position: absolute;
+        top: 94%;
+        left: -5%;
+        @media screen and (max-width: $tablet){
+            left: 0;
+        }
+
+        @include mobile-none();
+
+        .button {
+            @include flex($align:center, $justify:space-between, $direction: row);
+            @include button($background: $primary-color,  $padding: 0);
+            @extend %links;
+            width: 100%;
+            &:hover {
+                background-color: $hover-color;
+                p {
+                    color: $primary-color; 
+                }
+            }
+            
+            p {
+                @include font_YesevaOne($font-size: 0.9rem, $line-height: 1.5rem, $transform: uppercase, $color:$secondary-color);
+                font-family: "Yeseva One", serif;
+                font-weight: 700;
+                letter-spacing: 1px;
+                width: 90%;
+                margin: 0;
+                padding: 1rem 0 1rem 2rem;
+            }
+
+            img {
+                padding: 2rem 2.5rem 2rem 2rem;
+            }
+        }   
+
+    }
+
+    .sidebar {
+        position: absolute;
+        left: -6%;   /*relatively banner*/
+        top: 79%;
+        @include tablet-none();
+        @include mobile-none();
+
+        
+        p {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            transform: rotate(90deg);
+            width: 750px;
+            height: 5%;
+            margin-left: -45%;
+
+            a {
+                @extend %links;
+                @include font_futura_demi();
+                color: $emphasis-color;
+                margin-right: 40px;
+                &:hover {
+                    color: $secondary-color;
+                } 
+            }
+            
+            img {
+                width: 2px;
+                transform: rotate(90deg);
+            }
+        }
+    }
+}
+
+.projects {
+    @include flex($align:left, $justify:space-between, $direction: row);
+    padding: 9% 0 4% $padding-general;
+    background-color: $primary-color;
+
+    @media screen and (max-width: $mobile) {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-right: $padding-general;
+    }
+}
+
+.projects--left {
+    width: 35%;
+
+    @media screen and (max-width: $tablet) {
+        width: 100%;
+    }
+    
+    .projects_example {
+        margin-top: 10%;
+        text-align: left;
+        
+        @media screen and (max-width: $mobile) {
+            text-align: center;
+        }
+    }
+
+    .projects_example--caption {
+        @extend %h3;
+        display: inline-block;
+        font-weight: 700;
+        margin: 0;
+        width: 40%;
+    }
+
+    .projects--vector {
+        display: inline-flex;
+        vertical-align: middle;
+        @include mobile-none();
+    }
+
+    .projects_example--description {
+        @include font_book($font-size: 1.1rem, $line-height: 2rem, $transform: none, $color:$secondary-color);
+        width: 90%;
+        
+        @media screen and (max-width: $mobile) {
+            @include description;
+            color: $secondary-color;
+            margin-right: 0;
+        }
+    }
+    
+    
+    .slider--left {
+        display: none;
+        
+        @media screen and (max-width: $mobile) {
+            display: block;
+            position: relative;
+            overflow: hidden;
+            max-width: 100%;
+            @include flex($align:flex-start, $justify: normal, $direction: row);
+            width: 100%;
+            margin-bottom: 5%;
+           
+            .slider--image {
+                margin-right: 2%;
+                width: 100%;
+            }
+
+            .slider--button {
+                .slider--button-button {
+                    @include button($background: $emphasis-color, $padding: 1rem 1rem);
+                    position: absolute;
+                    top: 42%;
+                    left: 85%;
+                    width: 35px;
+                    height: 35px;
+                    padding: 3% 2% 3% 3%;
+                    z-index: 5;
+                    text-align: center;
+                    vertical-align: middle;
+                    border-radius: 50%;
+                    cursor: pointer;
+                   
+                    &:first-child {
+                        left: 5%;
+                        padding: 3% 3% 3% 2%; 
+                    }
+
+                    &:hover {
+                        background-color: darken($color: $emphasis-color, $amount: 20)
+                    }
+                       
+                }
+            }
+        }  
+    }
+    .projects--grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+
+        .projects_example--property {
+            @extend %h4;
+
+            @media screen and (max-width: $mobile) {
+                text-align: left;
+            }
+
+        }
+
+        .projects_example--property_description {
+            @include font_book($font-size: 0.94rem, $line-height: 1.25rem, $transform: none, $color:$secondary-color);
+            @include description();
+            color: $secondary-color;
+
+            @media screen and (max-width: $mobile) {
+                text-align: left;
+            }
+        }
+    }
+
+    .slider--arrows {
+        @extend %slider_btns;
+        width: 45%; 
+        top: 4rem;
+        @include tablet-none;
+        @include mobile-none();
+
+    }   
+}
+
+.projects--right {
+    width: 65%;
+    @include tablet-none;
+    @include mobile-none();
+
+    .projects--navbar {
+        @include flex($align: left);
+        @include mobile-none();
+
+        .projects--list {
+            list-style-type: none;
+            padding-left: 0;
+            @include flex($align: center);
+        }
+        
+        .projects--item {
+            margin: 0 1rem;
+
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+        
+        .projects--link {
+            display: flex;
+            justify-content: center;
+            letter-spacing: 1px;
+            @extend %links;
+            @include font_YesevaOne($font-size: 1rem, $line-height: 1.19rem, $transform: uppercase, $color: rgba(255, 255, 255, 0.3));
+            font-family: "Yeseva One", serif;
+            font-weight: 700;
+        
+            &:hover {
+                color: lighten($emphasis-color, 10%);
+                text-decoration: underline;
+            }
+        
+            &:active {
+                color: $emphasis-color;
+                text-decoration: underline;
+            }
+            &-active {
+                color: $emphasis-color;
+                text-decoration: underline;
+            }
+        }
+    } 
+    
+    .slider {
+        position: relative;
+        overflow: hidden;
+        max-width: 100%;
+        @include flex($align:flex-start, $justify: normal, $direction: row);
+
+        .slider--image {
+        margin-right: 2%;
+        }
+
+        @media screen and (max-width: $mobile) {
+            width: 100%;
+        }
+
+        .slider--button {
+            .slider--button-button {
+                @include button($background: $emphasis-color, $padding: 1rem 1rem);
+                position: absolute;
+                top: 43%;
+                left: 94%;
+                z-index: 5;
+                width: 54px;
+                height: 54px;
+                text-align: center;
+                vertical-align: middle;
+                border-radius: 50%;
+                cursor: pointer;
+                &:hover {
+                    background-color: darken($color: $emphasis-color, $amount: 20)
+                }
+            }
+        }
+    }
+}
+
+.online_control {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: $padding-general;
+    background: linear-gradient(to bottom, $primary-color 43%, $secondary-color 43%);
+    @media screen and (max-width: $mobile) {
+        padding-right: $padding-general;
+        background: $primary-color;
+    }
+    
+    h4 {
+        @extend %h4;
+        color: $secondary-color;
+        margin: 0.5rem 0;
+        
+        @media screen and (max-width: $mobile) {
+            font-size: 1.37rem;
+            line-height: 138%;
+            text-align: center;
+            letter-spacing: -0.07em;
+            width: 65%;
+        }
+    }
+
+    .online_control--image {
+        margin-bottom: 4%;
+    }
+
+    .online_control--video {
+        width: 560px;
+        margin: 0 auto;
+        border: 0;
+        @media screen and (max-width: $mobile) {
+            width: 100%;  
+            min-height: 250px;
+        }
+    }
+    
+    .vector {
+        margin-top: 4%;
+        @media screen and (max-width: $mobile) {
+            width: 20%;
+        }
+    }
+
+    .online_control--description {
+        @include description;
+        width: 50%;
+        @media screen and (max-width: $mobile) {
+            color: $secondary-color;
+        }
+    }
+}
+
+.form {
+    background-color: $secondary-color;
+    @include flex($align:center, $justify:space-between, $direction: row);
+    justify-content: center;
+    padding: 5% 0;
+    
+    @media screen and (max-width: $mobile) {
+        flex-direction: column;
+        width: 100%;
+        padding-right: 0;
+        background: linear-gradient(to bottom, $primary-color 72%, $secondary-color 43%);
+    }
+    form {
+        width: 60%;
+        @include flex($align:center, $justify:space-between, $direction: column);
+        @include font_book($font-size: 1.1rem, $line-height: 1.5rem, $transform: none, $color:$primary-color);
+        
+        @media screen and (max-width: $mobile) {
+            flex-direction: column;
+            width: 100%;
+        }
+        
+        
+        .fieldset {
+            @include flex($align:center, $justify:space-between, $direction: row);
+            border: 0;
+            margin-bottom: 3%;
+            
+            @media screen and (max-width: $mobile) {
+                width: 100%;
+                flex-direction: column;
+            }
+
+            input {
+                border: 0;
+                border-bottom: solid 1px $hover-color;
+                @media screen and (max-width: $mobile) {
+                    width: 100%;
+                    background-color: $primary-color;
+                }
+            }
+            ::-webkit-input-placeholder {color:$secondary-color;}
+            ::-moz-placeholder          {color:$secondary-color;}/* Firefox 19+ */
+            :-moz-placeholder           {color:$secondary-color;}/* Firefox 18- */
+            :-ms-input-placeholder      {color:$secondary-color;}
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+            margin-right: 10%;
+            label {
+                @include font_book($font-size: 0.9rem, $line-height: 1.25rem, $transform: none, $color:$hover-color);
+            }
+            @media screen and (max-width: $mobile) {
+                flex-direction: column;
+                justify-content: space-between;
+                width: 90%;
+                margin: 5% 0;
+            }
+        }
+
+        .form--button {
+            @include button($background: $emphasis-color, $padding: 0.5rem 4rem);
+            @include font_futura_demi($font-size: 0.9rem, $line-height: 1.6rem, $transform: uppercase, $color:$secondary-color);
+            @media screen and (max-width: $mobile) {
+                flex-direction: column;
+                justify-content: space-between;
+                width: 90%;
+                margin: 10% 0 5%;
+                padding: 0.5rem 9rem;
+            }
+        }
+
+        .checkbox {
+            @include checkbox();
+        }
+    }
+}
+
+.types_of_repair {
+    @include flex($align:center, $justify:space-between, $direction: column);
+    background-color: $secondary-color;
+
+    @media screen and (max-width: $mobile) {
+        @include flex ($direction:column);
+    }
+
+    h4 {
+        @extend %h4;
+        color: $primary-color;
+        & + img {  
+            margin-bottom: 3%;
+        }
+        
+        @media screen and (max-width: $mobile) {
+            width: 65%;
+            margin-bottom: 5%;
+            font-size: 1.37rem;
+            line-height: 138%;
+            text-align: center;
+            letter-spacing: -0.07em;
+        }  
+    }
+    
+    .types_of_repair--paragraphs {
+        @include flex($align:center, $justify:center, $direction: row);
+        width: 100%;
+        @media screen and (max-width: $mobile) {
+            flex-direction: column;
+        }
+    }
+    
+    .types_of_repair--item {  
+        margin: 0 1.5%;
+        img {
+            max-width: 100%;
+        }
+
+        @media screen and (max-width: $mobile) {
+            img {
+                width: 96%;                
+            }
+        }
+    }
+    .types_of_repair--list {
+        @include flex($align:left, $justify:space-between, $direction: column);
+        position: relative;
+        top: -6rem;
+        left: 7%;
+        width: 85%;
+        background-color: $secondary-color;
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.03);
+       
+        ul {
+            margin-bottom: 0;
+        }
+
+        @media screen and (max-width: $mobile) {
+            width: 80%;
+            left: 0%; 
+        }
+    }
+    
+
+    .heading {
+        @include font_YesevaOne($font-size: 1.1rem, $line-height: 1.6em, $transform: none, $color:$primary-color);
+        margin-bottom: 0;
+        padding-left: 8%;
+        font-family: "Yeseva One", serif;
+        font-weight: 700;
+
+        @media screen and (max-width: $mobile) {
+            font-size: 0.9rem;
+            line-height: 138.6%;
+        }
+    }
+    
+    .types_of_repair--item {
+        @include font_book($font-size: 0.9rem, $line-height: 1.6rem, $transform: none, $color:$hover-color);
+        
+        @media screen and (max-width: $mobile) {
+            font-size: 0.8rem;
+            line-height: 169.8%;
+        }
+        
+        
+    }
+    
+    .types_of_repair--button {
+        @extend %card_button;
+        
+        @media screen and (max-width: $mobile) {
+            font-size: 0.9rem;
+            line-height: 138.6%;
+        }
+    }
+}
+
+.advantages {
+    padding: 0 0 17% 0;
+    background-color: $secondary-color;
+    @include flex($align:center, $justify:space-between, $direction: row);
+    @media screen and (max-width: 1050px) {
+        display: none;
+    }
+    @include mobile-none();
+
+    .advantages--list {
+        background-image: url('./assets/images/background-advantages.png');
+        @extend %background;
+        background-size: contain;
+        width: 70%;
+        height: 600px;
+        overflow: hidden;
+        
+        .circle {
+            position: relative;
+            top: 7%;
+            left: -18%;
+            width: 70%;
+            height: 107%;
+            background-color: transparent;
+            border: solid 3px $emphasis-color;
+            border-radius: 50%;
+        }
+        .circle_group {
+            position: absolute;
+            width: 72%;
+
+            &:first-child {
+                top: 8%;
+                left: 79%;
+            }
+            
+            &:nth-child(2) {
+                top: 25%;
+                left: 91%;
+            }
+            &:nth-child(3) {
+                top: 50%;
+                left: 95%;
+             }
+            
+            &:last-child {
+                top: 75%;
+                left: 85%;
+                // width: 50%;
+            }
+        }
+        .circle_item {
+            position: absolute;
+            width: 42px;
+            height: 42px;
+            background-color: $emphasis-color;
+            border-radius: 50%;
+            text-align: center;
+            border: solid 10px $secondary-color; 
+        }
+        .circle_item--number {
+            margin: 13% 0 0;            
+            @include font_YesevaOne($font-size: 1.1rem, $line-height: 1.6em, $transform: uppercase, $color:$secondary-color);
+            font-family: "Yeseva One", serif;
+            font-weight: 700;
+        }
+        .circle_group--text {
+            @include font_book($font-size: 1.1rem, $line-height: 1.56rem, $transform: none, $color:$primary-color);
+            padding-left: 18%;            
+        }
+    }
+
+    .advantages--form {
+        width: 40%;
+        justify-content: center;
+        @include flex($align:unset, $justify:space-between, $direction: column);
+        
+        .advantages--form-caption {
+            @include font_futura_demi($font-size: 1.25rem, $line-height: 1.56rem, $transform: none, $color:$secondary-color);
+            width: 65%;
+            margin: 10% 0;
+            align-self: center;
+            text-align: center;
+        }
+        
+        form {
+            margin: 30% 0 5%;
+            padding: 0 10% 5%;
+            border: 0;
+            background-color: $primary-color;
+            @include flex($align:unset, $justify:space-between, $direction: column);
+            @include font_book($font-size: 1.1rem, $line-height: 1.5rem, $transform: none, $color:$primary-color); 
+
+            .field {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 8%;
+
+                label {
+                    @include font_book($font-size: 0.9rem, $line-height: 1.25rem, $transform: none, $color:$hover-color);
+                }
+            }
+
+            input {
+                color: $secondary-color;
+                background-color: $primary-color;
+                border: 0;
+                border-bottom: solid 1px $hover-color;
+                @include font_book($font-size: 1.1rem, $line-height: 1.56rem, $transform: none, $color:$secondary-color);
+                
+            }
+            ::-webkit-input-placeholder {color:$secondary-color;}
+            ::-moz-placeholder          {color:$secondary-color;}/* Firefox 19+ */
+            :-moz-placeholder           {color:$secondary-color;}/* Firefox 18- */
+            :-ms-input-placeholder      {color:$secondary-color;}
+        
+            
+        
+            .checkbox {
+                color: $secondary-color;
+                margin-bottom: 10%;
+                @include checkbox();
+            }
+            .form--button {
+                width: 50%;
+                margin: 3% 5%;
+                align-self: flex-end;
+                @include button($background: $emphasis-color, $padding: 1rem 1rem);
+                @include font_futura_demi($font-size: 0.9rem, $line-height: 1.6rem, $transform: uppercase, $color:$secondary-color);
+            }
+            @media screen and (max-width: $mobile) {
+                width: 100%;
+                @include flex ($direction:column);
+            }
+        }
+        .advantages--save {
+            display: flex;
+            flex-direction: row;
+            padding-left: 5%;
+
+            .advantages--save-image {}
+            
+            .advantages--save-p {
+                width: 55%;
+                @include font_futura_demi($font-size: 1.25rem, $line-height: 1.56rem, $transform: none, $color:$emphasis-color);
+            }
+        }
+    }    
+}
+
+.we_realize {
+    background-image: url('./assets/images/background-realize.png');
+    background-repeat: no-repeat;
+    @include flex($align: left, $justify:start, $direction: row);
+    @media screen and (max-width: $mobile) {
+        flex-direction: column;
+        background: linear-gradient(to bottom, $secondary-color 62%, $primary-color 43%);
+
+    }
+    
+    .we_realize--left {
+        width: 37%;
+        height: 100%;
+        padding-left: 5%;
+        padding-bottom: 5%;
+        @media screen and (max-width: $mobile) {
+            width: 100%;
+            padding: 0;
+            
+        }
+        
+    }
+
+    .we_realize--caption {
+        width: 70%;
+        margin: 25% 15% 7% 0;
+        font-weight: 700;
+        @extend %h3;
+
+        @media screen and (max-width: $mobile) {
+            margin: 0 auto 7%;
+        }
+        
+    }
+
+    .we_realize--navbar {
+        @include mobile-none();
+
+        .we_realize--list {
+            list-style-type: none;
+            padding-left: 0;
+            @include flex($align: left, $justify:space-between, $direction: column);
+        }
+                
+        .we_realize--link {
+            display: flex;
+            @extend %links;
+            @include font_proxima($font-size: 1.24em, $line-height: 3rem, $color:$secondary-color);
+            text-decoration: none;
+
+            &:hover {
+                color: lighten($emphasis-color, 10%);
+                text-decoration: underline;
+            }
+        
+            &:active {
+                color: $emphasis-color;
+                text-decoration: underline;
+            }
+            &-active {
+                color: $emphasis-color;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .we_realize--right {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        width: 63%;
+        height: 100%;
+        margin-bottom: -66%;
+
+        @media screen and (max-width: $mobile) {
+            display: block;
+            width: 100%;
+            margin: 0;
+        }
+
+    }
+
+    .we_realize--img1 {
+        position: relative;
+        top: -10%;
+        max-width: 100%;
+        @include mobile-none();
+    }
+    .we_realize--img2 {
+        position: relative;
+        top: -20%;
+        max-width: 100%;
+        @include mobile-none();
+    }
+    .we_realize--img3 {
+        position: relative;
+        top: -11%;
+        margin-bottom: -10%;
+        max-width: 100%;
+        @include mobile-none();
+    }
+    .we_realize--img4 {
+        position: relative;
+        top: -66%;
+        max-width: 100%;
+        @include mobile-none();
+    }
+
+    .we_realize--slider {
+        display: none;
+        @media screen and (max-width: $mobile) {
+            display: block;
+            position: relative;
+            max-width: 100%;
+            overflow: hidden;
+            margin: 0 auto;
+            @include flex($align:flex-start, $justify: normal, $direction: row);
+            
+            .slider--image {
+            margin: 0 4%;
+            width: 92%;
+            }
+
+            .slider--button {
+                .slider--button-button {
+                    @include button($background: $emphasis-color, $padding: 1rem 1rem);
+                    position: absolute;
+                    top: 42%;
+                    left: 84%;
+                    width: 35px;
+                    height: 35px;
+                    padding: 3% 2% 3% 3%;
+                    z-index: 5;
+                    text-align: center;
+                    vertical-align: middle;
+                    border-radius: 50%;
+                    cursor: pointer;
+                   
+                    &:first-child {
+                        left: 6%;
+                        padding: 3% 3% 3% 2%; 
+                    }
+
+                    &:hover {
+                        background-color: darken($color: $emphasis-color, $amount: 20)
+                    }
+                       
+                }
+            }
+
+
+
+
+
+
+        }
+    }
+}
+
+.design_project {
+    @include flex($align:center, $justify:space-between, $direction: column);
+    background: linear-gradient(to bottom, $secondary-color 50%, $primary-color 50%);
+    padding-top: 10%;
+    
+    @media screen and (max-width: $mobile) {
+        background: $primary-color;
+
+    }
+    .design_project--caption {
+        @extend %h4;
+        font-family: "Yeseva One", serif;
+        color: $primary-color;
+        
+        @media screen and (max-width: $mobile) {
+            width: 65%;
+            margin-bottom: 5%;
+            font-size: 1.37rem;
+            line-height: 138%;
+            text-align: center;
+            letter-spacing: -0.07em;
+            color: $secondary-color;
+        }
+    }
+    
+    .design_project--description {
+        width: 46%;
+        margin-bottom: 5%;
+        @include description;
+        
+        @media screen and (max-width: $mobile) {
+            color: $secondary-color;
+        }
+    }
+
+    
+    .design_project--paragraphs {
+        @include flex($align:flex-start, $justify:center, $direction: row);
+        width: 100%;
+        @media screen and (max-width: $mobile) {
+            flex-direction: column;
+        }
+    }
+
+    .design_project--paragraphs-item {  
+        @include flex($align:left, $justify:space-between, $direction: column);      
+        margin: 0 1.5%;
+
+        img {
+        max-width: 100%;
+        }
+
+        @media screen and (max-width: $mobile) {
+            @include flex ($direction:column);
+            img {
+                width: 96%;                
+            }
+        }
+    }
+    
+    .design_project--list {
+        @include flex($align:left, $justify:space-between, $direction: column);
+        position: relative;
+        top: -6rem;
+        left: 7%;
+        width: 85%;
+        background-color: $secondary-color;
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.03);
+        
+        ul {
+            margin-bottom: 0;
+        }
+
+        
+        @media screen and (max-width: $mobile) {
+            width: 80%;
+            left: -8%;
+        }
+
+    }
+
+    .heading {
+        @include font_YesevaOne($font-size: 1.1rem, $line-height: 1.6em, $transform: none, $color:$primary-color);
+        margin-bottom: 0;
+        padding-left: 8%;
+        font-family: "Yeseva One", serif;
+        font-weight: 700;
+
+        @media screen and (max-width: $mobile) {
+            font-size: 0.9rem;
+            line-height: 138.6%;
+        }
+    }
+
+    .design_project--item {
+        @include font_book($font-size: 0.9rem, $line-height: 1.6rem, $transform: none, $color:$hover-color);
+
+        @media screen and (max-width: $mobile) {
+            font-size: 0.8rem;
+            line-height: 169.8%;
+        }
+        
+    }
+
+    .design_project--button {
+        @extend %card_button;
+
+        @media screen and (max-width: $mobile) {
+            font-size: 0.9rem;
+            line-height: 138.6%;
+        }
+    }  
+}
+
+.how_work {
+        @include flex($align:left, $justify:space-between, $direction: row);
+        width: 94%;
+        padding: 0 0 4% $padding-general;
+        background-color: $primary-color;
+        @media screen and (max-width: 1050px) {
+            display: none;
+        }
+        @include mobile-none();
+    
+    .how_work--left {
+        position: relative;
+        top: -7rem;
+        width: 35%;
+        text-align: left;
+        
+        .how--caption {
+            @include font_futura_demi($font-size: 0.9rem, $line-height: 1.3rem, $transform: uppercase, $color:$secondary-color);
+        }
+
+        .how_work--caption {
+            @extend %h3;
+            display: inline-block;
+            font-weight: 700;
+            margin: 0;
+            margin-bottom: 20%;
+            width: 40%;
+        }
+    
+        .how_work--vector {
+            display: inline-flex;
+            vertical-align: middle;
+        }
+
+        .how_work--count {
+            @include font_YesevaOne($font-size: 1.1rem, $line-height: 1.56rem, $transform: uppercase, $color:$secondary-color);
+            font-family: "Yeseva One", serif;
+            font-weight: 700;
+        }
+        
+        .how_work--property {
+            @extend %h4;
+        }
+
+        .how_work--property_description {
+            @include font_book($font-size: 0.94rem, $line-height: 1.5rem, $transform: none, $color:$secondary-color);
+            width: 80%;
+        }
+    
+    
+        .slider--arrows {
+            @extend %slider_btns;
+            width: 80%;
+            top: 5rem;
+        }   
+    }
+    
+    .how_work--right {
+        width: 65%;
+    
+        .how_work--grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            
+            .how_work--right-property {
+                @extend %h4;
+                margin-bottom: 0;
+                color: $hover-color;
+
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 1.2rem;
+                    border-bottom: solid 2px darken($color: $emphasis-color, $amount: 30);
+                }
+                &-active {
+                    color: $secondary-color;
+                    &::after {
+                        content: "";
+                        display: block;
+                        width: 1.2rem;
+                        border-bottom: solid 2px $emphasis-color;
+                    }
+                }
+                
+            }
+            
+            .how_work--right-property_description {
+                @include font_book($font-size: 0.94rem, $line-height: 1.25rem, $transform: none, $color:$hover-color);
+                width: 44%;
+                &-active {
+                    color: $secondary-color;
+                }
+                
+            }
+            
+        }
+    }    
+    
+}
+
+.our_team {   
+    @include flex($align:center, $justify:space-between, $direction: column);
+    background: linear-gradient(to bottom, $primary-color 50%, $secondary-color 50%);
+    
+    @media screen and (max-width: $mobile) {
+        background: $primary-color;
+    }
+    .our_team--caption {
+        @extend %h4;
+        font-family: "Yeseva One", serif;
+        color: $secondary-color;
+
+        @media screen and (max-width: $mobile) {
+            width: 65%;
+            margin-bottom: 5%;
+            font-size: 1.37rem;
+            line-height: 138%;
+            text-align: center;
+            letter-spacing: -0.07em;
+            color: $secondary-color;
+        }
+    }
+
+    .our_team--description-top {
+        width: 50%;
+        @include description;
+        color: $secondary-color;
+        
+        @media screen and (max-width: $mobile) {
+            margin-bottom: 15%;
+        }
+    }
+    
+
+    .our_team--paragraphs {
+        @include flex($align:flex-start, $justify:center, $direction: row);
+        width: 100%;
+        
+        @media screen and (max-width: $mobile) {
+            flex-direction: column;
+        }
+    }
+    
+    .our_team--paragraphs-item {  
+        @include flex($align:left, $justify:space-between, $direction: column);  
+        margin: 0 3.5%;
+        
+        &:nth-child(2)::after {
+            content: "";
+            align-self: center;
+            display: block;
+            width: 4rem;
+            border-bottom: solid 1px $emphasis-color;
+
+            @media screen and (max-width: $mobile) {
+                @include mobile-none;
+            }
+        }
+        
+        @media screen and (max-width: $mobile) {
+            @include flex ($direction:column);
+            width: 100%;
+            margin: 0;
+        }
+    }
+
+    .images_group {
+        position: relative;
+        
+        .team_portrait {
+            max-width: 100%;
+        }
+        
+        .our_team--icon {
+            position: absolute;
+            top: -13%;
+            left: -19%;
+            max-width: 100%;
+        }
+
+        @media screen and (max-width: $mobile) {
+            align-self: center;
+            .team_portrait {
+                width: 112%;                
+            }
+
+            .our_team--icon {
+                position: absolute;
+                top: -12%;
+                left: -20%;
+            }
+        }
+    }
+
+    .our_team--list {
+        @include flex($align:center, $justify:space-between, $direction: column);
+        position: relative;
+        top: -6rem;
+        left: 5%;
+        width: 88%;
+        background-color: $secondary-color;
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.03);
+        
+        ul {
+            margin-bottom: 0;
+        }
+        
+        @media screen and (max-width: $mobile) {
+            top: -4rem;
+            left: 0;
+            width: 64%;
+        }
+    }
+
+    .heading {
+        @include font_YesevaOne($font-size: 1.1rem, $line-height: 1.6em, $transform: none, $color:$primary-color);
+        margin-bottom: 0;
+        padding-left: 8%;
+        font-family: "Yeseva One", serif;
+        font-weight: 700;
+
+        @media screen and (max-width: $mobile) {
+            font-size: 0.9rem;
+            line-height: 138.6%;
+            padding: 0;
+        }
+    }
+    
+    .our_team--item {
+        @include font_book($font-size: 0.9rem, $line-height: 1.6rem, $transform: none, $color:$hover-color);
+        margin: 0 0 1rem;
+
+        @media screen and (max-width: $mobile) {
+            font-size: 0.8rem;
+            line-height: 169.8%;
+        }
+        
+    }
+
+    .our_team--button {
+        position: static;
+        width: 90%;
+        padding: 1rem 0.5rem;
+        @include font_YesevaOne($font-size: 0.8rem, $line-height: 1.6em, $transform: uppercase, $color:$secondary-color);
+        font-family: "Yeseva One", serif;
+        font-weight: 700;   
+        letter-spacing: 1px;
+        text-align: center;
+        @extend %card_button;
+
+        @media screen and (max-width: $mobile) {
+            width: 100%;
+            padding: 1rem 0;
+            font-size: 0.9rem;
+            line-height: 138.6%;
+        }
+    }
+    
+    .our_team--description-bottom {
+        width: 39%;
+        @include description;
+
+        @include mobile-none();
+
+    }
+        
+    @media screen and (max-width: $mobile) {
+        @include flex ($direction:column);
+    }
+    & p:last-child {
+        @include mobile-none();
+    }
+}
+
+
+.our_clients {
+    @include flex($align:center, $justify:space-between, $direction: column);
+    background: $secondary-color;
+    padding: 0 $padding-general 30%;
+
+    @include mobile-none();
+
+    @media screen and (max-width: $tablet) {
+        padding-bottom: 10%;
+    }
+    
+    .our_clients--caption {
+        @extend %h4;
+        font-family: "Yeseva One", serif;
+        color: $primary-color;
+    }
+    
+    .our_clients--description {
+        width: 30%;
+        margin-bottom: 5%;
+        @include font_book($font-size: 1.25rem, $line-height: 1.7rem, $transform: none, $color:$primary-color);
+        text-align: center;
+    }
+    
+    .our_clients--paragraphs {
+        @include flex($align:flex-start, $justify:space-between, $direction: row);
+        width: 100%;
+        // padding: 2% 5% 5%;
+
+        
+        @media screen and (max-width: $tablet) {
+            flex-direction: column;
+        }
+    }
+    
+    .our_clients--paragraphs-item {  
+        @include flex($align:flex-start, $justify:space-between, $direction: column);
+        width: 28%;
+        padding: 1%;
+        background-color: $secondary-color;
+        box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.04);
+
+        @media screen and (max-width: $tablet) {
+            width: 100%;
+            margin-bottom: 10%;
+        }
+    }
+
+    .our_clients--group {
+        @include flex($align:flex-start, $justify:space-between, $direction: row);
+    }
+
+    .client_portrait {
+        margin-right: 5%;
+        }
+
+    .heading {
+        @include font_YesevaOne($font-size: 1.1rem, $line-height: 1.6em, $transform: none, $color:$primary-color);
+        margin-bottom: 0;
+        font-family: "Yeseva One", serif;
+        font-weight: 700;
+    }
+    
+    .our_clients--comment {
+        @include font_book($font-size: 0.9rem, $line-height: 1.5rem, $transform: none, $color:$hover-color);
+    }
+
+    .our_clients--button_group {
+        position: relative;
+        top: 3rem;
+        left: -4%;
+        width: 86%;
+        @include flex($align:flex-start, $justify:space-between, $direction: row);
+
+        @media screen and (max-width: $tablet){
+            justify-content: space-evenly;
+        }
+        
+        .our_clients--button {
+            @include button($background: $emphasis-color, $padding: 0 1rem);
+            @include flex($align:center, $justify:space-around, $direction: row);
+            border-radius: 0;
+            box-shadow: 0px 10px 20px rgba(237, 192, 120, 0.2);
+            
+            p {
+                @include font_YesevaOne($font-size: 1rem, $line-height: 1.6em, $transform: uppercase, $color:$secondary-color);
+                font-family: "Yeseva One", serif;
+                font-weight: 700;
+            }
+            &:first-child {
+                width: 36%;
+            }
+            &:last-child {
+                width: 43%;
+            }
+        }
+    }
+}
+
+
+.contacts {
+    padding-bottom: 5%;
+    background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+     url('./assets/images/background-contacts.jpg');
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-size: cover;
+    @extend %background;
+
+    @media screen and (max-width: $mobile) {
+    }
+
+    .questions {
+        position: relative;
+        top: -13rem;
+        width: 50%;
+        margin: 0 auto;
+        margin-bottom: -13rem;
+        background: transparent;
+
+        @media screen and (max-width: 1050px) and (min-width: $mobile) {
+            display: none;
+        }
+
+        @media screen and (max-width: $mobile) {
+            position: static;
+            width: 100%;
+            margin: 0;
+            @include flex ($direction:column);
+        }
+
+        .questions--form {
+            padding: 0 0 5%;
+            width: 100%;
+            border: 0;
+            background-color: $primary-color;
+            @include flex($align:center, $justify:space-between, $direction: column);
+            @include font_book($font-size: 1.1rem, $line-height: 1.5rem, $transform: none, $color:$primary-color); 
+            
+            @media screen and (max-width: $mobile) {
+                width: 100%;
+                padding: 0 0 15%;
+                @include flex ($direction:column);
+            }
+
+            .questions--caption {
+                margin: 4%;
+                @extend %h4;
+                font-family: "Yeseva One", serif;
+                color: $secondary-color;
+            }
+            .fieldset {
+                width: 65%;
+
+                @media screen and (max-width: $mobile) {
+                    width: 90%;
+                }
+            }
+            .fieldgroup {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                @media screen and (max-width: $mobile) {
+                    flex-direction: column;
+                }
+            }
+            .field {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 8%;
+
+                label {
+                    @include font_book($font-size: 0.9rem, $line-height: 1.25rem, $transform: none, $color:$hover-color);
+                }
+            }
+
+            input {
+                color: $secondary-color;
+                background-color: $primary-color;
+                border: 0;
+                border-bottom: solid 1px $hover-color;
+                @include font_book($font-size: 1.1rem, $line-height: 1.56rem, $transform: none, $color:$secondary-color);
+            }
+            ::-webkit-input-placeholder {color:$secondary-color;}
+            ::-moz-placeholder          {color:$secondary-color;}/* Firefox 19+ */
+            :-moz-placeholder           {color:$secondary-color;}/* Firefox 18- */
+            :-ms-input-placeholder      {color:$secondary-color;}
+        
+            
+        
+            .checkbox {
+                color: $secondary-color;
+                margin-bottom: 10%;
+                @include checkbox();
+            }
+            .form--button {
+                width: 50%;
+                margin: 0% 5%;
+                @include button($background: $emphasis-color, $padding: 1rem 1rem);
+                @include font_futura_demi($font-size: 0.9rem, $line-height: 1.6rem, $transform: uppercase, $color:$secondary-color);
+
+                @media screen and (max-width: $mobile) {
+                    width: 90%;
+                }
+            }
+            
+        }
+
+       
+    }
+
+    .contacts--section {
+        @media screen and (max-width: $mobile) {
+            @include flex ($align: center, $justify: space-around, $direction: column-reverse);
+            width: 100%;
+        }
+        
+    }
+        
+    .contacts--caption {
+        text-align: center;
+        width: 37%; 
+        margin: 4% auto;
+        @extend %h4;
+        font-family: "Yeseva One", serif;
+        color: $emphasis-color;
+        
+        @media screen and (max-width: $mobile) {
+            width: 65%;
+            margin: 10% auto 4%;
+            
+        }
+    }
+    
+    .contacts--phone {
+        @extend %links;
+        color: $emphasis-color;
+    }
+    
+    .contacts--social_btns {
+        @include flex($align:center, $justify:space-around, $direction: row);
+        width: 7%;
+        margin: 4% auto;
+        
+        @media screen and (max-width: $mobile) {
+            width: 35%;
+            margin: 5% auto 10%;
+        }
+    }
+
+    .social--btn {
+        @include button($background: $emphasis-color, $padding: 1rem 1rem);
+        width: 35px;
+        text-align: center;
+        vertical-align: middle;
+        border-radius: 50%;
+        padding: 0.5rem 0;
+        border: 1px solid transparent;
+
+        @media screen and (max-width: 1050px) and (min-width: $mobile){
+            background-color: transparent;
+        }
+        
+    }
+    
+    .contacts--social_link {
+        @extend %links;
+    }
+    
+    
+    .map {
+        display: flex;
+        -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+        filter: grayscale(100%);
+        
+        @media screen and (max-width: $mobile) {
+            width: 100%;
+        }
+        .map--iframe {
+            align-self: center;
+            width: 60%;
+            margin: 0 auto;
+            border: 0;
+
+            @media screen and (max-width: $mobile) {
+                align-self: center;
+                width: 90%;
+                margin: 0 5%;
+                border: 0;
+                height: 270px;
+            }
+        }
+    }
+}
+
+
+
+.footer {
+
+    @include header_footer();
+    padding: 3% $padding-general;    
+    
+    @media screen and (max-width: $mobile) {
+    }
+    @include mobile-none();
+}

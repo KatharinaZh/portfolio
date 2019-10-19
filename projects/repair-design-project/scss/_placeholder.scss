@@ -1,0 +1,74 @@
+%links {
+    text-decoration: none;
+    color: $secondary-color;
+}
+%heading-font {
+
+    font-size: 1.56rem;
+}
+
+%background {
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+%card_button {
+    @include font_YesevaOne($font-size: 1.1rem, $line-height: 1.6em, $transform: uppercase, $color:$secondary-color);
+    @include button($background: $emphasis-color, $padding: 1rem 1rem);
+    font-family: "Yeseva One", serif;
+    font-weight: 700;
+    position: relative;
+    top: 1.5rem;
+    width: 63%;  
+    border-radius: 0;
+}
+%slider_btns {
+    @include flex($align:center, $justify:space-evenly, $direction: row);
+    position: relative;
+
+    .button.button_arrow {
+        border: solid 1px transparent;
+        background-color: transparent;
+        cursor: pointer;
+        &:hover,
+        &:active { 
+            opacity: 0.5;
+        }
+    }
+    
+    .button.button_cicrle {
+        border: 0;
+        border-radius: 50%;
+        height: 10px;
+        width: 10px;
+        background-color: rgba(255, 255, 255, 0.3);
+        cursor: pointer;
+        &:hover,
+        &:active,
+        &-active {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+    }
+}
+
+%h3 {
+    @include font_YesevaOne($font-size: 1.69rem, $line-height: 2.3rem, $transform: uppercase, $color:$emphasis-color);
+    font-family: "Yeseva One", serif;
+
+    @media screen and (max-width: $mobile) {
+        font-size: 1.37rem;
+        line-height: 138%;
+        text-align: center;
+        letter-spacing: -0.07em;
+        width: 65%;
+    }
+}
+%h4 {
+    @include font_YesevaOne($font-size: 1.1rem, $line-height: 1.6rem, $transform: uppercase, $color:$emphasis-color);
+    font-family: "Yeseva One", serif;
+    font-weight: 700;
+
+    @media screen and (max-width: $mobile) {
+        font-size: 0.9rem;
+        line-height: 138.6%;
+    }
+}

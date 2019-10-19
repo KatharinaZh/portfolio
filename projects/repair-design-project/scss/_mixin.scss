@@ -1,0 +1,204 @@
+@mixin tablet-none() {
+    @media screen and (max-width: $tablet) {
+            display: none;
+    }
+}
+
+@mixin mobile-none() {
+    @media screen and (max-width: $mobile) {
+        display: none;
+    }
+}
+
+@mixin header_footer() {
+    padding: 1% $padding-general;
+    @include flex();
+    @media screen and (max-width: $mobile) {
+        width: 100%;
+    }
+
+    .logo--link {
+        @extend %links;
+        @include font_futura_demi();
+        color: $emphasis-color;
+        @media screen and (max-width: $mobile) {
+            font-size: 0.7rem;
+        }
+    }
+
+    .navbar--list {
+        list-style-type: none;
+        @include flex($align: center);
+        @include tablet-none();
+        @include mobile-none();
+    }
+
+    .navbar--item {
+        width: calc(100% / 7);
+        margin: 0 1rem;
+    }
+
+    .navbar--link {
+        display: flex;
+        justify-content: center;
+        letter-spacing: 1px;
+        @extend %links;
+        @include font_book();
+
+        &:hover {
+            color: lighten($emphasis-color, 10%);
+        }
+
+        &:active {
+            color: $emphasis-color;
+        }
+    }
+
+    .navbar--link-active {
+        color: $emphasis-color;
+    }
+
+    .tel--link {
+        @include font_futura_demi();
+        &:hover {
+            color: $secondary-color;
+        }
+        @media screen and (max-width: $mobile) {
+            font-size: 0.7rem;
+            text-align: center;
+        }
+    }
+
+    .header--button {
+        .button {    
+            @include font_futura_demi();
+            @include button($padding: 0.8rem 2.5rem); 
+        }
+
+        @media screen and (max-width: 1050px) {
+            display: none;
+        }
+    }
+
+}
+@mixin flex($align:center, $justify:space-between, $direction: row) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+@mixin font_futura_demi($font-size: 0.9rem, $line-height: 1rem, $transform: uppercase, $color:$emphasis-color) {
+    font-family: "FuturaDemiC", sans-serif;
+    font-size: $font-size;
+    line-height: $line-height;
+    text-transform: $transform;
+    color: $color; 
+    font-weight: bold;
+}
+
+@mixin font_book($font-size: 0.9rem, $line-height: 1rem, $transform: uppercase, $color:$secondary-color) {
+    font-family: "FuturaBookC", sans-serif;
+    font-size: $font-size;
+    line-height: $line-height;
+    text-transform: $transform;
+    color: $color;
+}
+@mixin font_YesevaOne($font-size: 2.5rem, $line-height: 3.3rem, $transform: uppercase, $color:$secondary-color) {
+    font-family: "Yeseva One", sans-serif;
+    font-size: $font-size;
+    line-height: $line-height;
+    font-weight: 400;
+    text-transform: $transform;
+    color: $color;  
+}
+@mixin font_futura_medium($font-size: 1.1em, $line-height: 1.56rem, $color:$secondary-color) {
+    font-family: "FuturaMediumC", sans-serif;
+    font-size: $font-size;
+    line-height: $line-height;
+    color: $color;
+}
+@mixin font_proxima($font-size: 1.24em, $line-height: 2.1rem, $color:$secondary-color) {
+    font-family: "Proxima Nova", sans-serif;
+    font-size: $font-size;
+    line-height: $line-height;
+    color: $color;
+}
+@mixin description {
+    @include font_book($font-size: 1.25rem, $line-height: 2.1rem, $transform: none, $color:$primary-color);
+    text-align: center;
+
+    @media screen and (max-width: $mobile) {
+        width: 90%;
+        font-size: 0.9rem;
+        line-height: 158%;
+    }
+}
+@mixin button($background: $emphasis-color, $padding: 1rem 2rem) {
+    padding: $padding;
+    color: $secondary-color;
+    background-color: $background;
+    border: 0;
+    border-radius: 2px;
+    &:hover {
+        color: $primary-color;
+        background-color:  $hover-color;
+        border: solid 1px transparent;
+        cursor: pointer;
+    }
+
+}
+
+@mixin checkbox () {
+    input[type="checkbox"]:checked, 
+    input[type="checkbox"]:not(:checked), 
+    {
+        display: none;
+    }
+
+    input[type="checkbox"]:checked + label, 
+    input[type="checkbox"]:not(:checked) + label {
+        display: inline-block;
+        position: relative;
+        padding-left: 2rem;
+        cursor: pointer;
+    }
+
+    input[type="checkbox"]:checked + label:before, 
+    input[type="checkbox"]:not(:checked) + label:before {
+        content: "";
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 18px;
+        height: 18px;
+        border: 1px solid transparent;
+        background-color: $emphasis-color;
+    }
+
+    input[type="checkbox"]:checked + label:after, 
+    input[type="checkbox"]:not(:checked) + label:after {
+        content: "";
+        position: absolute;
+        transition: all 0.2s ease;
+    }
+
+    input[type="checkbox"]:checked + label:after, 
+    input[type="checkbox"]:not(:checked) + label:after {
+        left: 3px;
+        top: 4px;
+        width: 10px;
+        height: 5px;
+        border-radius: 1px;
+        border-left: 4px solid $secondary-color;
+        border-bottom: 4px solid $secondary-color;
+        transform: rotate(-45deg);
+    }
+
+    input[type="checkbox"]:not(:checked) + label:after {
+        opacity: 0;
+    }
+
+    input[type="checkbox"]:checked + label:after {
+        opacity: 1;
+    }
+}

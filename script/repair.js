@@ -10,3 +10,11 @@ mobileBtn.addEventListener('click', () => {
     mobileBtn.innerHTML = "Mobile";
   }
 })
+
+
+
+// document.querySelector('frame').style.width = '375px'; mobile
+// document.querySelector('frame').style.margin = '0 auto'; center
+// document.querySelector('frame').style.width = ''; default
+
+
