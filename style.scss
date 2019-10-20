@@ -344,7 +344,7 @@ body {
 
 .fix_button {
   position: fixed;
-  left: 89%;
+  left: 83%;
   display: block;
   width: 100px;
   height: 50px;
@@ -353,6 +353,16 @@ body {
   border-radius: 4%;
   background-color: rgb(171, 171, 171);
   color: white;
+  cursor: pointer;
+
+  &:hover {
+    color: black;
+    background-color: white;
+  }
+
+  @media screen and (max-width: 374px) {
+    left: 67%;
+  }
 
   a {
     display: block;
@@ -361,6 +371,11 @@ body {
     padding: 0.8rem;
     color: white;
     text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+      color: black;
+    }
   }
 
 }
@@ -368,6 +383,10 @@ body {
 .button_mobile {
   top: 55%;
   cursor: pointer;
+
+  @media screen and (max-width: 374px) {
+    display: none;
+  }
 }
 
 .button_desktop {
@@ -378,4 +397,16 @@ body {
 .mobile_width {
   margin: 0 auto;
   max-width: 375px;
+}
+
+.body_project {
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.5);
+
+//   @media screen and (max-width: 374px) {
+
+//     & .button_mobile {
+//       display: none;
+//     }
+// }
 }

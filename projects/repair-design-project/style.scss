@@ -656,6 +656,7 @@ body {
 
     .advantages--list {
         background-image: url('./assets/images/background-advantages.png');
+        // background-image: url('./assets/images/background-advantages.jpg');
         @extend %background;
         background-size: contain;
         width: 70%;

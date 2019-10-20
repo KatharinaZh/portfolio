@@ -38,6 +38,10 @@
   src: url('../assets/fonts/open-sans/OpenSans-Regular.ttf') format("truetype");
 }
 
+body {
+  background-color: white;
+}
+
 .inner-wrapper {
   width: 1020px;
   margin: 0 auto;
